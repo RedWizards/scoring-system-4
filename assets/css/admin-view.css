@@ -46,10 +46,26 @@ header {
 	margin: 5px;
 }
 
+.inside-option.logout-box {
+	padding-top: 50%;
+	height: 250px;
+	background-color: #dfdfdf;
+	color: red;
+	border: solid 2px red;
+	transition: all 0.5s ease;
+	margin: 5px;
+}
+
 .inside-option:hover {
 	color: #fff;
 	background-color: #564c89;
 	border: solid 2px #564c89;
+}
+
+.inside-option.logout-box:hover {
+	color: #fff;
+	background-color: red;
+	border: solid 2px red;
 }
 
 .option-outline {

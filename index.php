@@ -6,7 +6,7 @@
 
 	<head>
 
-		<title>UHAC Manila</title>
+		<title>U:HACKADEMIA</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="assets/images/uhac.ico" type="image/ico" sizes="32x32">
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 				<tr>
 					<td>
 						<div id="p1" class="text-center">
-							<h1 id="event-name"><b>UHAC</b> Manila</h1>
+							<h1 id="event-name">U:HACKADEMIA</h1>
 							<small id="system-name"><b>SCORING SYSTEM</small>
 						</div>
 									
@@ -44,8 +44,6 @@
 				</tr>
 			</table>
 		</div>
-
-
 
 		<div id="register-judge">
 			<table>
@@ -74,6 +72,7 @@
 
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/angular.min.js"></script>
 	<script src="assets/js/angular-animate.js"></script>
 	<script src="assets/js/judge-view.js"></script>

@@ -5,7 +5,7 @@
 
 	<head>
 
-		<title>UHAC Manila | ADMIN</title>
+		<title>U:HACKADEMIA | ADMIN</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="../assets/images/uhac.ico" type="image/ico" sizes="32x32">
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -29,7 +29,7 @@
 
 			<div class="row outer-row">
 
-				<h2 class="text-center">UHAC <strong>Manila</strong></h2>
+				<h2 class="text-center">U:HACKADEMIA</h2>
 				<br/><br/>
 
 				<div class="col-md-offset-3 col-md-6">
@@ -78,7 +78,7 @@
 
 						<div class="col-md-4 col-sm-4 col-xs-12 text-center option-outline">
 							<a href="./logout.php">
-								<div class="inside-option">
+								<div class="inside-option logout-box">
 									<span class="option-title">LOG OUT</span>
 								</div>
 							</a>
