@@ -4,7 +4,7 @@
 <html ng-app="createCriteria">
 
     <head>
-        <title>Add Criteria</title>
+        <title>ADMIN</title>
         <link rel="stylesheet" href="../assets/css/bootstrap3.min.css">
         <link rel="stylesheet" href="../assets/css/criteria.css">
         <link rel="stylesheet" href="../assets/css/admin-view.css">
@@ -94,10 +94,6 @@
 
             </div>
 
-        </div>
-
-        <div id="footer" class="text-center">
-            <small class="sub">POWERED BY</small><br/><strong>RED Wizard Events Management</strong><br/>&copy; 2017
         </div>
 
     </body>

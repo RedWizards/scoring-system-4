@@ -18,119 +18,72 @@
 
 	<body ng-app="scoring-sheet">
 
-			<header>
-				<div class="text-center">
-					<img src="assets/images/scoring-logo-sm.png" class="img-responsive" id="scoring-logo" width="200px" height="40px">
-				</div>
-			</header>
-			
-			<div id="section" ng-controller="sheet-ctrl" ng-init="init()">
+		<header class="text-center">
+			<img src="assets/images/scoring-logo-sm.png" class="img-responsive" id="scoring-logo" width="200px" height="45px">
+		</header>
 
-				<h3 id="team-list" class="text-center" ng-hide="activeNow"><b>TEAM LIST</b></h3>
+		<div class="sheet-container" ng-controller="sheet-ctrl" ng-init="init()">
 
-				<div class="row row-section">
-					<div class="offset-3 col-md-6">
+			<br/>
+			<div ng-hide="activeNow">
+				<h3 id="team-list" class="text-center"><b>TEAM LIST</b></h3>
+				<br/>
+			</div>
 
-						<div ng-repeat="team in teams">
+			<div class="row justify-content-center no-padding no-margin">
+				<div class="col-lg-6 col-md-7 col-sm-10 col-xs-10">
+					<div ng-repeat="team in teams">
 
-							<div ng-hide="activeNow">
+						<button type="button" class="btn btn-default team-btn" ng-click="setScore(team)" ng-hide="activeNow">
+							<span id="btn-team-name" class="pull-left">{{team.team_name | uppercase}}</span> 
+							<span id="btn-team-score" class="pull-right"><b>{{team.total}} %</b></span>
+						</button>
 
-								<button type="button" class="btn btn-default team-btn" ng-click="setScore(team)"><span id="btn-team-name" class="pull-left">{{team.team_name | uppercase}}</span> <span id="btn-team-score" class="pull-right"><b>{{team.total}} %</b></span></button>
-								
+						<div ng-show="team.isActive">
+							<button id="view-btn" ng-click="closeTeam(team)"><span class="fa fa-chevron-left"></span> View All Teams</button>
+							<br/><br/>
+							<div class="text-center">
+								<h3><strong>{{team.project_name | uppercase}}</strong></h3>
+								<h5 class="team-name"><small>by</small> <strong>{{team.team_name | uppercase}}</strong></h5>
 							</div>
-
-							<div ng-show="team.isActive">				
-							
-								<div>
-									<button id="view-btn" ng-click="closeTeam(team)"><span class="fa fa-chevron-left"></span> View All Teams</button>
-								</div>
-								<br/>			
-								
-								<div class="text-center">
-									<span id="team-lbl"><small style="color:darkgray;">TEAM </small>{{team.team_name | uppercase}}</span>
-								</div>
+							<br/>
+							<form id="main-sheet-{{team.team_id}}">
+								<table>
+									<tr class="table-header">
+										<td class="criteria-lbl">CRITERIA</td>
+										<td class="text-right score-lbl">SCORE<td>
+									</tr>
+									<tr ng-repeat="criteria in team.criteria" id="criteria-box">
+										<td class="criteria">
+											<span><b>{{criteria.criteria_desc}}</b></span><br/>
+											<small><i>{{criteria.criteria_longdesc}}</i></small>
+										</td>
+										<td class="text-right score">
+											<input type="number" class="text-right" name="criteria-team{{team.team_id}}-criteria{{criteria.criteria_id}}" placeholder="0" min="1" max="{{criteria.criteria_weight}}" style="width: 50%;" ng-model="criteria.score_details.score" ng-change="updateScore(team)" value="{{criteria.score_details.score}}"/><span> / {{criteria.criteria_weight}}</span>
+										</td>
+									</tr>
+								</table>
 								<br/>
-
-								<div id="team-desc">
-											
-									<b>Project Name</b> <span>{{team.project_name}}</span><br/>
-									<b>Project Description</b>		
-										<div class="text-justify" style="padding: 0 10px;">
-											<p>{{team.long_desc}}</p>
-										</div>
-								</div>
-								
-								<div>
-									<form id="main-sheet-{{team.team_id}}">
-										
-										<h3><i>SCORING SHEET</i></h3>
-
-										<hr/>
-
-										<table style="width: 100%;">
-
-											
-											<tr ng-repeat="criteria in team.criteria" id="criteria-box" style="width: 100%; height: 70px;">
-
-													<td style="width: 70%; word-wrap: true;">
-														<span><b>{{criteria.criteria_desc}}</b></span><br/>
-														<small><i>{{criteria.criteria_longdesc}}</i></small>
-													</td>
-																		
-													<td class="text-right" style="width: 30%; word-wrap: true;">
-														<input type="number" class="text-right" name="criteria-team{{team.team_id}}-criteria{{criteria.criteria_id}}" placeholder="0" min="1" max="{{criteria.criteria_weight}}" style="width: 50%;" ng-model="criteria.score_details.score" ng-change="updateScore(team)" value="{{criteria.score_details.score}}"/><span> / {{criteria.criteria_weight}}</span>
-													</td>
-												
-												<!-- <div class="row row-section" class="criteria">
-												
-													<div class="pull-left" style="width: 70%; word-wrap: true;">
-														<span><b>{{criteria.criteria_desc}}</b></span><br/>
-														<small><i>{{criteria.criteria_longdesc}}</i></small>
-													</div>
-																		
-													<div class="pull-right" style="width: 30%; word-wrap: true;">
-														<h4><input type="number" class="text-right" name="criteria-team{{team.team_id}}-criteria{{criteria.criteria_id}}" placeholder="0" min="1" max="{{criteria.criteria_weight}}" style="width: 4em;" ng-model="criteria.score_details.score" ng-change="updateScore(team)" value="{{criteria.score_details.score}}"/><span> / {{criteria.criteria_weight}}</span></h4>
-													</div>
-												
-												</div> -->
-
-											</tr>
-
-										</table>
-											
-										<hr/>
-											
-										<div class="row row-section">
-											<h2 class="pull-left">TOTAL: </h2>
-											<h2 class="pull-right">{{team.total}} %</h2>
-											<br/><br/>
-											<input type="submit" value="submit" id="submit-btn" ng-click="setScores(team)" />
-										</div>
-											
-										<br/>
-											
-									</form>
-								</div>
-								
-							</div>
-							
-						</div>
-						
-						<div class="text-center" ng-hide="activeNow">
-							<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
+								<h3 class="pull-left"><strong>TOTAL </strong></h3>
+								<h3 class="pull-right"><strong>{{team.total}} %</strong></h3>
+								<input type="button" value="SUBMIT" id="submit-btn" ng-click="setScores(team)" ng-show="team.total"/>
+								<input type="button" value="SUBMIT" class="submit-btn-disabled" ng-hide="team.total" disabled/>
+							</form>
 						</div>
 
 					</div>
 				</div>
+			</div>
 
+			<div class="text-center" ng-hide="activeNow">
+				<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
 			</div>
-			
-			<div id="footer" class="text-center">
-				<small class="sub">SCORING SYSTEM BY</small>
-				<br/>
-				<strong class="dev-grp">RED Wizard Event Technologies</strong>
-				<span class="copyright">&copy; 2018<span>
-			</div>
+
+		</div>
+
+		<div id="footer" class="text-center">
+			<br/>
+		</div>
 			
 	</body>
 	<script src="assets/js/jquery.js"></script>
