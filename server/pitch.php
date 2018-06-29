@@ -5,12 +5,12 @@
 
     <head>
         <title>Order of Pitching</title>
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap3.min.css">
         <link rel="stylesheet" href="../assets/css/criteria.css">
         <link rel="stylesheet" href="../assets/css/admin-view.css">
         <script src='../assets/js/angular.min.js'></script>
         <script src="../assets/js/jquery.js"></script>
-        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bootstrap3.min.js"></script>
         <script src="../assets/js/teams.js"></script>
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     </head>

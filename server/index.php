@@ -17,20 +17,20 @@
 	<body>
 
 		<div id="register-judge">
-			<table>
-				<tr>
-					<td>
-						<div id="p3" class="text-center">
-							<h4 class="sub">Authorized Personnel Only</h4>
+			<div class="container cover-content">
+				<div class="row align-items-center justify-content-center row-content">
+					<div class="col-lg-4 col-md-4 col-sm-9 col-xs-9 text-center">
+						<div class="text-center">
+							<h5 style="color: #fff;">Authorized Personnel Only</h5>
 							<br/>
 							<form class="form" method='post' action='../helpers/admin-login.php'>
-			        			<input placeholder="PASSWORD" type="password" id="password" name="password" class="form-control text-center" style="height: 50px;" autofocus required><br/>
+			        			<input placeholder="PASSWORD" type="password" id="password" name="password" class="form-control text-center" style="height: 50px; border-radius: 0;" autofocus required><br/>
 								<input id="register-button" class="btn" class="form-control" data-loading-text="Please Wait..." type="submit" value="ENTER">
 			        		</form>
 						</div>
-					</td>
-				</tr>
-			</table> 
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>

@@ -29,12 +29,9 @@
 
 			<div class="row outer-row">
 
-				<h2 class="text-center">U:HACKADEMIA</h2>
-				<br/><br/>
+				<div class="offset-3 col-md-6">
 
-				<div class="col-md-offset-3 col-md-6">
-
-					<div>
+					<div class="row">
 						<div class="col-md-4 col-sm-4 col-xs-12 text-center option-outline">
 							<a href="criteria.php">
 								<div class="inside-option">

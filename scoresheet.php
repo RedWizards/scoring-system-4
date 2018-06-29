@@ -8,9 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="assets/images/uhac.ico" type="image/ico" sizes="32x32">
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		
 		<link rel="stylesheet" href="assets/css/judge-view.css">
 		<script src="assets/js/angular.min.js"></script>
 		<script src="assets/js/angular-animate.js"></script>
@@ -22,7 +20,7 @@
 
 			<header>
 				<div class="text-center">
-					<h3 id="scoresheet-name">U:HACKADEMIA</h3>
+					<img src="assets/images/scoring-logo-sm.png" class="img-responsive" id="scoring-logo" width="200px" height="40px">
 				</div>
 			</header>
 			
@@ -31,7 +29,7 @@
 				<h3 id="team-list" class="text-center" ng-hide="activeNow"><b>TEAM LIST</b></h3>
 
 				<div class="row row-section">
-					<div class="col-md-offset-3 col-md-6">
+					<div class="offset-3 col-md-6">
 
 						<div ng-repeat="team in teams">
 
@@ -44,7 +42,7 @@
 							<div ng-show="team.isActive">				
 							
 								<div>
-									<button id="view-btn" ng-click="closeTeam(team)"><span class="glyphicon glyphicon-chevron-left"></span> View All Teams</button>
+									<button id="view-btn" ng-click="closeTeam(team)"><span class="fa fa-chevron-left"></span> View All Teams</button>
 								</div>
 								<br/>			
 								
@@ -103,7 +101,8 @@
 										<hr/>
 											
 										<div class="row row-section">
-											<h2 class="pull-left">TOTAL</h2><h2 class="pull-right">{{team.total}} %</h2>
+											<h2 class="pull-left">TOTAL: </h2>
+											<h2 class="pull-right">{{team.total}} %</h2>
 											<br/><br/>
 											<input type="submit" value="submit" id="submit-btn" ng-click="setScores(team)" />
 										</div>
@@ -118,7 +117,7 @@
 						</div>
 						
 						<div class="text-center" ng-hide="activeNow">
-							<a href="./helpers/logout.php"><button id="done-btn">DONE</button></a>
+							<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
 						</div>
 
 					</div>
@@ -126,15 +125,17 @@
 
 			</div>
 			
-			
 			<div id="footer" class="text-center">
-				<small class="sub">POWERED BY</small><br/><strong>RED Wizard Events Management</strong><br/>&copy; 2017
+				<small class="sub">SCORING SYSTEM BY</small>
+				<br/>
+				<strong class="dev-grp">RED Wizard Event Technologies</strong>
+				<span class="copyright">&copy; 2018<span>
 			</div>
 			
 	</body>
-
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/judge-view.js"></script>
 	<script src="assets/js/judge-scoresheet.js"></script>
 

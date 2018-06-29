@@ -1,11 +1,15 @@
 function regJudgeOpen() {
 	document.getElementById("event-cover").style.height = 0;
 	document.getElementById("event-cover").style.opacity = 0;
+	document.getElementById("scoring-logo").style.height = 0;
+	document.getElementById("scoring-logo").style.opacity = 0;
 }
 
 function regJudgeClose() {
 	document.getElementById("event-cover").style.height = "100%";
 	document.getElementById("event-cover").style.opacity = 1;
+	document.getElementById("scoring-logo").style.height = "100%";
+	document.getElementById("scoring-logo").style.opacity = 1;
 }
 
 function reset(){

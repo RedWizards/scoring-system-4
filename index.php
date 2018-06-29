@@ -18,54 +18,28 @@
 	<body>
 
 		<div id="event-cover" onclick="regJudgeOpen()">
-			<table>
-				<tr>
-					<td>
-						<div id="p1" class="text-center">
-							<h1 id="event-name">U:HACKADEMIA</h1>
-							<small id="system-name"><b>SCORING SYSTEM</small>
-						</div>
-									
-						<div id="center-logo">
-							
-						</div>
-									
-						<div id="p2" class="text-center">
-							<br/>
-							<small id="note">CLICK ANYWHERE TO CONTINUE</small>
-							<br/><br/>
-
-							<small class="sub">POWERED BY</small><br/>
-							<span id="company"><strong>RED Wizard Events Management</strong></span><br/>
-							<small class="sub"><i>Created by </i></small>
-							<span id="dev-grp">Mamba Codes</span>
-						</div>
-					</td>
-				</tr>
-			</table>
+			<div class="container cover-content">
+				<div class="row align-items-center justify-content-center row-content">
+					<div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 text-center">
+						<img src="assets/images/scoring-logo.png" class="img-responsive" id="scoring-logo" width="100%" height="100%">
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div id="register-judge">
-			<table>
-				<tr>
-					<td>
-						<a class="btn btn-simple" id="closeRegBtn" href="javascript:regJudgeClose()">&times;</a>
-						<div id="p4" class="text-center">
-							<p id="welcome-judge">WELCOME</h3>
-							<!--
-							<small class="sub">Please enter your name</small>
-							-->
-						</div>
-
-						<div id="p3" class="text-center">
-							<form class="form">
-			        			<input placeholder="Please enter your name" type="text" id="input-container" class="form-control text-center" autofocus required><br/>
-								<input id="register-button" class="btn" class="form-control" data-loading-text="Please Wait..." type="submit" value="SUBMIT">
-			        		</form>
-						</div>
-					</td>
-				</tr>
-			</table> 
+			<div class="container cover-content">
+				<div class="row align-items-center justify-content-center row-content no-select">
+					<a class="btn btn-simple" id="closeRegBtn" href="javascript:regJudgeClose()">&times;</a>
+					<div class="col-lg-4 col-md-4 col-sm-9 col-xs-9 text-center">
+						<h3 id="welcome-judge" class="no-select">WELCOME</h3><br/>
+						<form class="form">
+		        			<input placeholder="Please enter your name" type="text" id="input-container" class="form-control text-center" autofocus required><br/>
+							<input id="register-button" class="btn" class="form-control" data-loading-text="Please Wait..." type="submit" value="SUBMIT">
+			        	</form>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>
