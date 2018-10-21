@@ -79,10 +79,12 @@
 
 					</div>
 
-					<div class="text-center" ng-show="allDone => teams.length">	
-						<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
-					</div>
+				</div>
+			</div>
 
+			<div ng-hide="activeNow">
+				<div class="text-center" ng-show="allDone >= teams.length">
+					<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
 				</div>
 			</div>
 
