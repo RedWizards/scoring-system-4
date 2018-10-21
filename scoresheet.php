@@ -34,10 +34,16 @@
 				<div class="col-lg-6 col-md-7 col-sm-10 col-xs-10">
 					<div ng-repeat="team in teams">
 
-						<button type="button" class="btn btn-default team-btn" ng-click="setScore(team)" ng-hide="activeNow">
-							<span id="btn-team-name" class="pull-left">{{team.team_name | uppercase}}</span> 
-							<span id="btn-team-score" class="pull-right"><b>{{team.total}} %</b></span>
-						</button>
+						<div ng-hide="activeNow">
+							<button type="button" class="btn btn-default team-btn-done" ng-click="setScore(team)" ng-show="team.total">
+								<span id="btn-team-name" class="pull-left">{{team.team_name | uppercase}}</span>
+								<span id="btn-team-score" class="pull-right"><b>{{team.total}} %</b></span>
+							</button>
+							<button type="button" class="btn btn-default team-btn" ng-click="setScore(team)" ng-show="!team.total">
+								<span id="btn-team-name" class="pull-left">{{team.team_name | uppercase}}</span>
+								<span id="btn-team-score" class="pull-right"><b>{{team.total}} %</b></span>
+							</button>
+						</div>
 
 						<div ng-show="team.isActive">
 							<button id="view-btn" ng-click="closeTeam(team)"><span class="fa fa-chevron-left"></span> View All Teams</button>
@@ -72,11 +78,12 @@
 						</div>
 
 					</div>
-				</div>
-			</div>
 
-			<div class="text-center" ng-hide="activeNow">
-				<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
+					<div class="text-center" ng-show="allDone => teams.length">	
+						<a href="./helpers/logout.php"><button id="done-btn" class="text-center">DONE</button></a>
+					</div>
+
+				</div>
 			</div>
 
 		</div>
@@ -84,7 +91,7 @@
 		<div id="footer" class="text-center">
 			<br/>
 		</div>
-			
+
 	</body>
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>

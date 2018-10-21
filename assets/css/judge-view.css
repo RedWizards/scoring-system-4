@@ -416,6 +416,17 @@ header {
 	background-color: #fff;
 }
 
+.team-btn-done {
+	width: 100%;
+	height: 70px;
+	padding: 0 30px;
+	border-color: #1b0688;
+	transition: all 0.5s ease;
+	margin: 10px 0;
+	color: #fff;
+	background-color: #564c89;
+}
+
 .team-btn:hover {
 	background-color: #564c89;
 	border-color: #564c89;
@@ -578,7 +589,7 @@ input{
 
 .sheet-container {
 	background-color: #fff;
-	height: 100%;
+	height: 1200px;
 	margin: 0;
 	padding: 0;
 }

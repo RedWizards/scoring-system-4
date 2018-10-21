@@ -4,7 +4,8 @@
 	app.controller('sheet-ctrl', ['$scope' , 'Session', function($scope, Session) {
 
 		$scope.activeNow =  false;
-		$scope.isActive = false;			
+		$scope.isActive = false;	
+		$scope.allDone = 0;
 
 
 		$scope.init = function(){
@@ -79,6 +80,7 @@
 			if(success == true){
 				alert("Scores submitted!");
 				$scope.closeTeam(team);
+				collectScore();
 			}else{
 				alert("Some of the scores are not submitted.\nPlease try again with a valid input.");
 				window.location.href = './scoresheet.php';
@@ -100,6 +102,10 @@
 		$scope.closeTeam = function(team) {
 			team.isActive = false;
 			$scope.activeNow = false;
+		}
+		
+		collectScore = function() {
+			$scope.allDone++;
 		}
 
 	}]);
